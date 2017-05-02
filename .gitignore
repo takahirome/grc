@@ -1,0 +1,6 @@
+lambda/node_modules
+lambda/lambda-function.zip
+npm-debug.log
+.DS_Store
+angular/node_modules
+angular/config/default.json
