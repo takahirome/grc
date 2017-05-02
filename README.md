@@ -51,6 +51,3 @@
 * api -> cheerio query
     * jconv.decode(req.query.keyword,'JIS')
     * Step1. JIS decode
-* cheerio result -> mysql
-    * 'keyword':jconv.decode(keyword,'JIS')
-    * Step1. JIS decode

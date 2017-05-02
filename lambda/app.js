@@ -74,7 +74,7 @@ app.get('/scrape', (req, res) => {
               if(anchor.attr("href").match(req.query.domain)){
                 results.push({
                     "domain": req.query.domain,
-                    "keyword": req.query.keyword,
+                    "keyword": jconv.decode(req.query.keyword,'JIS'),
                     "rank" : idx+1,
                     "title" : anchor.text(),
                     "url" : anchor.attr("href"),

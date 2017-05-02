@@ -122,7 +122,7 @@ function saveRank(domain,keyword,rank,title,url,description){
             headers: headers,
             json:{
                 'domain':domain,
-                'keyword':jconv.decode(keyword,'JIS'),
+                'keyword':keyword,
                 'rank':rank,
                 'title':title,
                 'url':url,
