@@ -17,15 +17,15 @@
 ### Library
 * yarn.lock
 
-### Data structure
-#### user
+## Data structure
+### user
 * id(PK)
 * email
 * password
 * status
 * timestamp
 
-#### rank
+### rank
 * id(PK)
 * domain
 * keyword
@@ -36,7 +36,7 @@
 * status
 * timestamp
 
-#### stock
+### stock
 * id(PK)
 * userid
 * domain
