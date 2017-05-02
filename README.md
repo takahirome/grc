@@ -41,3 +41,16 @@
 * userid
 * domain
 * keyword
+
+## encode decode
+* job -> api
+    * encodeURIComponent(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS'))
+    * Step1. UTF8 -> JIS
+    * Step2. JIS -> encode
+    * Ex. callStocksResultsJson[i].keyword : デザイン
+* api -> cheerio query
+    * jconv.decode(req.query.keyword,'JIS')
+    * Step1. JIS decode
+* cheerio result -> mysql
+    * 'keyword':jconv.decode(keyword,'JIS')
+    * Step1. JIS decode
