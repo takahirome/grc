@@ -118,9 +118,7 @@ app.get('/scrape', (req, res) => {
 
   // Googleでkeywordを検索する。
   //
-  var request = { q: encodeURIComponent(req.query.keyword) };
-  console.log("---request");
-  console.log(request);
+  var request = { q: req.query.keyword };
   var promise = searchClearlyByGoogle( request );
 
   // 検索結果を「タイトル」「URL」「概要」で表示する。
