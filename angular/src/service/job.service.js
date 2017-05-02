@@ -15,9 +15,7 @@ exports.job = function(req, res) {
             // rejectされた時は、自動的にこの関数が中断されるからtry-catchで囲む必要もない。
             for(var i=0;i<callStocksResultsJson.length;i++){
                 // awaitで同期処理
-                const callScrapeResult = await callScrape(callStocksResultsJson[i].domain,jconv.encode(callStocksResultsJson[i].keyword,'JIS'));
-                console.log("---jconv.encode(callStocksResultsJson[i].keyword,'JIS')");
-                console.log(jconv.encode(callStocksResultsJson[i].keyword,'JIS'));
+                const callScrapeResult = await callScrape(callStocksResultsJson[i].domain,jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS'));
                 process.on('unhandledRejection', console.dir);
                 if(callScrapeResult === "") break;
                 csrjson = JSON.parse(callScrapeResult);
