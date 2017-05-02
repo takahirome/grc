@@ -1,0 +1,48 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div ng-app="app">
+            <div ng-controller="RankCtrl as rc">
+                
+                <form name="rankForm" novalidate>
+                    <label>domain: <input type="text" ng-model="domain" placeholder="nodejs.org"/></label><br />
+                    <label>keyword: <input type="text" ng-model="keyword" placeholder="Node.js"/></label><br />
+                    <button ng-click="getRank()">search</button>
+                    <button ng-click="getRankAll()">searchAll</button>
+                </form>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>domain</th>
+                            <th>keyword</th>
+                            <th>timestamp</th>
+                            <th>rank</th>
+                            <th>url</th>
+                            <th>title</th>
+                            <th>description</th>
+                        </tr>
+                    </thead>
+                    <tbody>                
+                        <tr ng-repeat="item in items">
+                            <td>{{item.id}}</td>
+                            <td>{{item.domain}}</td>
+                            <td>{{item.keyword}}</td>
+                            <td>{{item.timestamp}}</td>
+                            <td>{{item.rank}}</td>
+                            <td>{{item.url}}</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.description}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="/angular/angular.min.js" charset="utf-8"></script>
+        <script src="/assets/js/grc.module.js" charset="utf-8"></script>
+        <script src="/assets/js/rank.controller.js" charset="utf-8"></script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div ng-app="app">
+
+                <div ng-controller="StockCtrl as sc">
+
+                <form name="stockForm" novalidate>
+                    <label>domain: <input type="text" ng-model="domain"/></label><br />
+                    <label>keyword: <input type="text" ng-model="keyword"/></label><br />
+                    <label>userid: <input type="text" ng-model="userid" placeholder="1"/></label><br />
+                    <button ng-click="saveStock()">save</button>
+                </form>
+                    
+                <form name="stockForm" novalidate>
+                    <label>id: <input type="text" ng-model="id" /></label><br />
+                    <button ng-click="deleteStock()">delete</button>
+                </form>
+
+                <form name="stockForm" novalidate>
+                    <label>userid: <input type="text" ng-model="userid" placeholder="1"/></label><br />
+                    <button ng-click="getStock()">search</button>
+                    <button ng-click="getStockAll()">searchAll</button>
+                </form>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>userid</th>
+                            <th>domain</th>
+                            <th>keyword</th>
+                        </tr>
+                    </thead>
+                    <tbody>                
+                        <tr ng-repeat="item in items">
+                            <td>{{item.id}}</td>
+                            <td>{{item.userid}}</td>
+                            <td>{{item.domain}}</td>
+                            <td>{{item.keyword}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <script src="/angular/angular.min.js" charset="utf-8"></script>
+        <script src="/assets/js/grc.module.js" charset="utf-8"></script>
+        <script src="/assets/js/stock.controller.js" charset="utf-8"></script>
+    </body>
+</html>

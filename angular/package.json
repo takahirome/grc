@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "angular": "^1.6.4",
+    "aws-sdk": "^2.46.0",
+    "body-parser": "^1.17.1",
+    "cheerio-httpcli": "^0.6.11",
+    "config": "^1.25.1",
+    "crypt": "^0.0.2",
+    "date-utils": "^1.2.21",
+    "express": "^4.15.2",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.13.0",
+    "promise": "^7.1.1",
+    "request": "^2.81.0"
+  }
+}

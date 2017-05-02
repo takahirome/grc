@@ -1,0 +1,46 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div ng-app="app">
+
+                <div ng-controller="UserCtrl as uc">
+
+                <form name="userForm" novalidate>
+                    <label>E-mail: <input type="text" ng-model="email" /></label><br />
+                    <label>password: <input type="password" ng-model="password" /></label><br />
+                    <button ng-click="saveUser()">save</button>
+                </form>
+                    
+                <form name="userForm" novalidate>
+                    <label>E-mail: <input type="text" ng-model="email" /></label><br />
+                    <button ng-click="deleteUser()">delete</button>
+                </form>
+
+                <form name="userForm" novalidate>
+                    <label>E-mail: <input type="text" ng-model="email" /></label><br />
+                    <button ng-click="getUser()">search</button>
+                </form>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                    <tbody>                
+                        <tr ng-repeat="item in items">
+                            <td>{{item.id}}</td>
+                            <td>{{item.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <script src="/angular/angular.min.js" charset="utf-8"></script>
+        <script src="/assets/js/grc.module.js" charset="utf-8"></script>
+        <script src="/assets/js/user.controller.js" charset="utf-8"></script>
+    </body>
+</html>
