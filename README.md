@@ -8,36 +8,36 @@
 
 ## Architecture
 ### Serverless API
-APIGW - lambda - Node.js(express)
+* APIGW - lambda - Node.js(express)
 ### Library
-package.json
+* package.json
 
 ### Web Server
-EC2 AngularJS Node.js(express) - RDS(MySQL)
+* EC2 AngularJS Node.js(express) - RDS(MySQL)
 ### Library
-yarn.lock
+* yarn.lock
 
 ### Data structure
 #### user
-- id(PK)
-- email
-- password
-- status
-- timestamp
+* id(PK)
+* email
+* password
+* status
+* timestamp
 
 #### rank
-- id(PK)
-- domain
-- keyword
-- rank
-- title
-- url
-- description
-- status
-- timestamp
+* id(PK)
+* domain
+* keyword
+* rank
+* title
+* url
+* description
+* status
+* timestamp
 
 #### stock
-- id(PK)
-- userid
-- domain
-- keyword
+* id(PK)
+* userid
+* domain
+* keyword
