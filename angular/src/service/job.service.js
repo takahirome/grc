@@ -97,7 +97,7 @@ function callScrape(domain,keyword){
         };
         request(options, function (err, response, body) {
             if (body) {
-                // console.log(body);
+                console.log(body);
                 resolve(body);
             }
             if (err) {
