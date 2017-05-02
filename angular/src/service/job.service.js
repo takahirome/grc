@@ -17,6 +17,8 @@ exports.job = function(req, res) {
             for(var i=0;i<callStocksResultsJson.length;i++){
                 // awaitで同期処理
                 const callScrapeResult = await callScrape(callStocksResultsJson[i].domain,escape(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS')));
+                console.log("escape(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS'))");
+                console.log(escape(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS')));
                 process.on('unhandledRejection', console.dir);
                 if(callScrapeResult === "") break;
                 csrjson = JSON.parse(callScrapeResult);
@@ -98,7 +100,7 @@ function callScrape(domain,keyword){
         };
         request(options, function (err, response, body) {
             if (body) {
-                // console.log(body);
+                console.log(body);
                 resolve(body);
             }
             if (err) {
