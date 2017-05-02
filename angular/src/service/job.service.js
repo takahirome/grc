@@ -1,6 +1,5 @@
 var request = require('request');
 var jconv = require('jconv');
-var escape = require('escape-html');
 
 // CRUDのR
 exports.job = function(req, res) {
@@ -16,9 +15,9 @@ exports.job = function(req, res) {
             // rejectされた時は、自動的にこの関数が中断されるからtry-catchで囲む必要もない。
             for(var i=0;i<callStocksResultsJson.length;i++){
                 // awaitで同期処理
-                const callScrapeResult = await callScrape(callStocksResultsJson[i].domain,escape(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS')));
-                console.log("escape(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS'))");
-                console.log(escape(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS')));
+                const callScrapeResult = await callScrape(callStocksResultsJson[i].domain,encodeURIComponent(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS')));
+                console.log("encodeURIComponent(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS'))");
+                console.log(encodeURIComponent(jconv.convert(callStocksResultsJson[i].keyword,'UTF8','JIS')));
                 process.on('unhandledRejection', console.dir);
                 if(callScrapeResult === "") break;
                 csrjson = JSON.parse(callScrapeResult);
