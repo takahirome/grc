@@ -17,8 +17,8 @@ exports.job = function(req, res) {
             for(var i=0;i<callStocksResultsJson.length;i++){
                 // awaitで同期処理
                 const callScrapeResult = await callScrape(callStocksResultsJson[i].domain,iconv.encode(callStocksResultsJson[i].keyword,'JIS'));
-                console.log("---iconv.encode(callStocksResultsJson[i].keyword,'JIS')");
-                console.log(iconv.encode(callStocksResultsJson[i].keyword,'JIS'));
+                console.log("---iconv.encode(callStocksResultsJson[i].keyword,'jis')");
+                console.log(iconv.encode(callStocksResultsJson[i].keyword,'jis'));
                 process.on('unhandledRejection', console.dir);
                 if(callScrapeResult === "") break;
                 csrjson = JSON.parse(callScrapeResult);
