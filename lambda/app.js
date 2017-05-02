@@ -8,7 +8,6 @@ const cheerioClient = require('cheerio-httpcli');
 require('date-utils');
 const AWS = require('aws-sdk');
 const dynamo = new AWS.DynamoDB.DocumentClient();
-const utf8 = require('utf8');
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -119,7 +118,12 @@ app.get('/scrape', (req, res) => {
 
   // Googleでkeywordを検索する。
   //
-  var request = { q: utf8.encode(req.query.keyword) };
+
+  var utf8_text = req.query.keyword;
+  var utf8_buffer = new Buffer(utf8_text, 'utf8');  //UTF-8として作成
+  var base64_text = utf8_buffer.toString('base64');  //base64エンコード
+
+  var request = { q: base64_text };
   var promise = searchClearlyByGoogle( request );
 
   // 検索結果を「タイトル」「URL」「概要」で表示する。
