@@ -88,7 +88,6 @@ app.get('/scrape', (req, res) => {
 
   // Googleでkeywordを検索する。
   //
-  console.log(req.query.keyword);
   var query = jconv.decode(req.query.keyword,'JIS');
   var request = { q: query };
   var promise = searchClearlyByGoogle( request );
