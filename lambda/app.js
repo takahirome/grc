@@ -118,12 +118,7 @@ app.get('/scrape', (req, res) => {
 
   // Googleでkeywordを検索する。
   //
-
-  var utf8_text = req.query.keyword;
-  var utf8_buffer = new Buffer(utf8_text, 'utf8');  //UTF-8として作成
-  var base64_text = utf8_buffer.toString('base64');  //base64エンコード
-
-  var request = { q: base64_text };
+  var request = { q: req.query.keyword };
   var promise = searchClearlyByGoogle( request );
 
   // 検索結果を「タイトル」「URL」「概要」で表示する。
